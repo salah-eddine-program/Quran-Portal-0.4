@@ -1,0 +1,52 @@
+{
+  "name": "بوابة القرآن الكريم",
+  "short_name": "بوابة القرآن",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./#/home",
+  "display": "standalone",
+  "background_color": "#fbfaf6",
+  "theme_color": "#102f27",
+  "icons": [
+    {
+      "src": "assets/images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "id": "./",
+  "scope": "./",
+  "description": "بوابة عربية للقراءة والاستماع والبحث والمراجعة مع أدوات إسلامية.",
+  "categories": [
+    "education",
+    "books",
+    "lifestyle"
+  ],
+  "shortcuts": [
+    {
+      "name": "المصحف الشريف",
+      "short_name": "المصحف",
+      "url": "./#/quran",
+      "icons": [
+        {
+          "src": "assets/images/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "المحفوظات والمراجعة",
+      "short_name": "المراجعة",
+      "url": "./#/favorites",
+      "icons": [
+        {
+          "src": "assets/images/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

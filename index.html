@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102f27">
+  <meta name="description" content="بوابة عربية للقراءة والاستماع والبحث والمراجعة، مع مواقيت الصلاة وأدوات القبلة والسبحة.">
+  <title>بوابة القرآن الكريم</title>
+  <link rel="icon" href="./assets/images/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#/home" aria-label="بوابة القرآن الكريم، الرئيسية">
+        <img src="./assets/images/icon.svg" width="42" height="42" alt="">
+        <span><strong>بوابة القرآن</strong><small>QURAN PORTAL</small></span>
+      </a>
+      <nav class="top-nav" aria-label="التنقل الرئيسي">
+        <a href="#/home" data-nav="home">الرئيسية</a><a href="#/quran" data-nav="quran">المصحف</a>
+        <a href="#/reciters" data-nav="reciters">التلاوات</a><a href="#/tafsir" data-nav="tafsir">التفسير</a>
+        <a href="#/library" data-nav="library">المكتبة</a><a href="#/lessons" data-nav="lessons">الدروس</a>
+        <a href="#/radio" data-nav="radio">الإذاعة</a><a href="#/calendar" data-nav="calendar">التقويم</a><a href="#/services" data-nav="services">أدوات</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="search-open" type="button" aria-label="بحث" title="بحث">⌕</button>
+        <a class="icon-button favorite-shortcut" href="#/favorites" aria-label="المحفوظات" title="المحفوظات">♡</a>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="تبديل المظهر" title="تبديل المظهر">◐</button><button class="icon-button install-button" id="install-app" type="button" aria-label="تثبيت البوابة" title="تثبيت البوابة" hidden>⇩</button>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="page-shell" tabindex="-1">
+    <div class="loading-state" role="status" aria-live="polite"><span class="spinner" aria-hidden="true"></span><p>جارٍ تجهيز البوابة…</p></div>
+    <noscript><p class="notice" role="alert">فعّل JavaScript لعرض أقسام البوابة وبياناتها.</p></noscript>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="brand brand-small" href="#/home"><img src="./assets/images/icon.svg" width="34" height="34" alt=""><span><strong>بوابة القرآن</strong><small>QURAN PORTAL</small></span></a>
+        <p>مساحة عربية هادئة للقراءة والاستماع والوصول إلى المصادر.</p>
+      </div>
+      <div class="footer-links"><a href="#/about">عن البوابة والمصادر</a><a href="#/favorites">المحفوظات والإعدادات</a><a href="https://alquran.cloud/api" target="_blank" rel="noopener noreferrer">توثيق مصدر القرآن ↗</a></div>
+      <small class="copyright">© <span id="year"></span> بوابة القرآن الكريم</small>
+    </div>
+  </footer>
+  <nav class="mobile-nav" aria-label="التنقل للهاتف">
+    <a href="#/home" data-nav="home"><span>⌂</span><small>الرئيسية</small></a>
+    <a href="#/quran" data-nav="quran"><span>▤</span><small>المصحف</small></a>
+    <a href="#/radio" data-nav="radio"><span>◉</span><small>الإذاعة</small></a>
+    <a href="#/adhkar" data-nav="adhkar"><span>☼</span><small>الأذكار</small></a>
+    <a href="#/services" data-nav="services"><span>✦</span><small>أدوات</small></a>
+    <a href="#/library" data-nav="library"><span>▣</span><small>المكتبة</small></a>
+    <a href="#/favorites" data-nav="favorites"><span>♡</span><small>المحفوظات</small></a>
+  </nav>
+  <section class="audio-dock" id="audio-dock" aria-label="مشغل الصوت" hidden>
+    <div class="audio-meta"><span class="audio-art">♫</span><span><strong id="audio-title">لا يوجد تشغيل</strong><small id="audio-subtitle">اختر تلاوة أو إذاعة</small></span></div>
+    <label class="audio-speed-control"><span class="visually-hidden">سرعة التلاوة</span><select id="audio-speed" aria-label="سرعة التلاوة"><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+    <label class="audio-sleep-control"><span class="visually-hidden">مؤقت إيقاف الصوت</span><select id="sleep-timer" aria-label="مؤقت إيقاف الصوت"><option value="0">المؤقت</option><option value="5">٥ د</option><option value="10">١٠ د</option><option value="15">١٥ د</option><option value="30">٣٠ د</option><option value="60">٦٠ د</option></select></label>
+    <audio id="audio-element" controls preload="none"></audio>
+    <button class="icon-button audio-close" id="audio-close" type="button" aria-label="إغلاق المشغل">×</button>
+  </section>
+  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-heading">
+    <div class="dialog-head"><div><span class="eyebrow">بحث شامل</span><h2 id="search-heading">إلى أين تريد الوصول؟</h2></div><button class="icon-button" id="search-close" type="button" aria-label="إغلاق">×</button></div>
+    <label class="search-field"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="ابحث في الأقسام والسور…" autocomplete="off"><kbd>Esc</kbd></label>
+    <div id="search-results" class="search-results"><p class="muted">اكتب اسم قسم أو سورة لعرض النتائج.</p></div>
+    <section class="quran-search-panel" aria-labelledby="quran-search-heading"><h3 id="quran-search-heading">البحث في الآيات</h3><div id="quran-search-results" class="quran-search-results" aria-live="polite"><p class="muted">اكتب ثلاث حروف أو أكثر للبحث في نص القرآن.</p></div><p class="source-note">مصدر النتائج: <a href="https://alquran.cloud/api" target="_blank" rel="noopener noreferrer">Al Quran Cloud API ↗</a></p></section>
+  </dialog>
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <script src="./assets/js/app.js" defer></script>
+</body>
+</html>

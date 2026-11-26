@@ -1,0 +1,12 @@
+Quran Portal — complete GitHub upload package
+
+The root index.html uses relative paths (./assets/...) so its styles, script and icons load when you open it locally or host it as a static site. The full source project, out/ export and a separate HTML-Portable/ copy are also included.
+
+Recommended GitHub Pages setup:
+1. Upload the contents of this ZIP to the repository's main branch.
+2. In Settings → Pages, choose GitHub Actions as the deployment source.
+3. The included .github/workflows/pages.yml builds the source and deploys out/, including the correct repository base path.
+
+For complete Quran/API features and PWA/offline support, use the HTTPS GitHub Pages deployment. Browsers may restrict API requests when opening a local file directly.
+
+Build locally with Node.js 20.9+: npm ci, npm run build, npm run check:export.

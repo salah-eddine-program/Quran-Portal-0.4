@@ -1,0 +1,7 @@
+Quran Portal — static website
+
+For root hosting or a custom domain, upload the contents of this folder.
+For GitHub Pages project repositories, use the source package and its GitHub Actions workflow; it sets the repository base path automatically.
+For a custom build, set NEXT_PUBLIC_BASE_PATH to the repository path (for example /quran-portal) before npm run build.
+
+The static site needs JavaScript and an HTTPS host for install/offline features. Quran text, prayer times and recitations are loaded from their documented online sources; previously opened surahs and downloaded verse audio can be read from this device when offline.
